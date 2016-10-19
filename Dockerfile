@@ -60,8 +60,15 @@ RUN apt-get update \
  && apt-get upgrade -y --force-yes \
  && rm -rf /var/lib/apt/lists/*;
 
+RUN apt-get install python-setuptools
+
+RUN easy_install GitPython
+RUN easy_install boto
+RUN curl https://bootstrap.pypa.io/get-pip.py | python
+RUN pip install awscli
+
 RUN npm update
-RUN npm install -g webpack gulp grunt 
+RUN npm install -g webpack gulp grunt karma bower 
 RUN npm install -g phantomjs-prebuilt
 
 # Define working directory
