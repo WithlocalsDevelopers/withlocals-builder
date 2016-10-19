@@ -62,7 +62,7 @@ RUN apt-get update \
 
 RUN npm update
 RUN npm install -g webpack gulp grunt 
-RUN npm install phantomjs-prebuilt
+RUN npm install -g phantomjs-prebuilt
 
 # Define working directory
 WORKDIR /root
