@@ -1,32 +1,6 @@
-# Scala and sbt Dockerfile
+# Scala+sbt, NodeJs and DockerInDocker Dockerfile
 
-This repository contains **Dockerfile** of [Scala](http://www.scala-lang.org) and [sbt](http://www.scala-sbt.org).
-
-
-## Base Docker Image ##
-
-* [java:8](https://registry.hub.docker.com/_/java/)
-
-
-## Installation ##
-
-1. Install [Docker](https://www.docker.com)
-2. Pull [automated build](https://registry.hub.docker.com/u/hseeberger/scala-sbt/) from public [Docker Hub Registry](https://registry.hub.docker.com/):
-```
-docker pull hseeberger/scala-sbt
-```
-Alternatively, you can build an image from Dockerfile:
-```
-docker build -t hseeberger/scala-sbt github.com/hseeberger/scala-sbt
-```
-
-
-## Usage ##
-
-```
-docker run -it --rm hseeberger/scala-sbt
-```
-
+This repository contains **Dockerfile** to build a Scala+NodeJs application and it even has Docker-in-docker suppoert
 
 ## Contribution policy ##
 
