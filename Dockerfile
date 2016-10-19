@@ -45,9 +45,8 @@ RUN \
 #Install Nodejs 6.9
 RUN apt-get install rlwrap
 
-RUN curl https://deb.nodesource.com/node_6.x/pool/main/n/nodejs/nodejs_6.7.0-1nodesource1~trusty1_amd64.deb > node.deb \
- && dpkg -i node.deb \
- && rm node.deb
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs 
 
 RUN npm install -g pangyp\
  && ln -s $(which pangyp) $(dirname $(which pangyp))/node-gyp\
@@ -56,11 +55,11 @@ RUN npm install -g pangyp\
 
 ENV NODE_ENV production
 
+RUN apt-get install python-setuptools
+
 RUN apt-get update \
  && apt-get upgrade -y --force-yes \
  && rm -rf /var/lib/apt/lists/*;
-
-RUN apt-get install python-setuptools
 
 RUN easy_install GitPython
 RUN easy_install boto
