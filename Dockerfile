@@ -53,8 +53,6 @@ RUN npm install -g pangyp\
  && npm cache clear\
  && node-gyp configure || echo ""
 
-ENV NODE_ENV production
-
 RUN apt-get upgrade -y --force-yes \
  && rm -rf /var/lib/apt/lists/*;
 
